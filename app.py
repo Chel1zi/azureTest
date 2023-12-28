@@ -33,7 +33,7 @@ def get_cities_data():
 
 def get_reviews_data():
     # sql = "SELECT c.score, c.city FROM c"
-    sql = "SELECT TOP 10000 c.score, c.city FROM c"
+    sql = "SELECT c.score, c.city FROM c"
     o = {"enableCrossPartitionQuery": True}  # 如果集合是分区集合，需要启用跨分区查询
     # 执行查询
     q = list(client.QueryDocuments(f"dbs/{DATABASE_ID}/colls/{COLLECTION_ID2}", sql, o))
